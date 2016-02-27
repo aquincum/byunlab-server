@@ -12,10 +12,12 @@
         {
             "name": "experigenserver",
             "image": "aquincum/experigenserver2",
+            "memory": 128,
+            "essential": true,
             "mountPoints": [
                 {
                     "sourceVolume": "awseb-logs-experigenserver",
-                    "containerPath": "/var/log/experigenserver"
+                    "containerPath": "/var/log/experigenserver",
                 }
             ],
             "portMappings": [

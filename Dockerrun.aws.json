@@ -19,12 +19,6 @@
                     "sourceVolume": "awseb-logs-experigenserver",
                     "containerPath": "/var/log/experigenserver"
                 }
-            ],
-            "portMappings": [
-                {
-                    "hostPort": 3000,
-                    "containerPort": 3000
-                }
             ]
         },
         {
@@ -40,6 +34,10 @@
                     "sourceVolume": "nginx-proxy-conf",
                     "containerPath": "/etc/nginx/conf.d",
                     "readOnly": true
+                },
+                {
+                    "sourceVolume": "awseb-logs-nginx-proxy",
+                    "containerPath": "/var/log/nginx"
                 }
             ],
             "portMappings": [

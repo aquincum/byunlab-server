@@ -32,6 +32,9 @@
             "image": "nginx",
             "memory": 128,
             "essential": true,
+            "links": [
+                "experigenserver"
+            ],
             "mountPoints": [
                 {
                     "sourceVolume": "nginx-proxy-conf",

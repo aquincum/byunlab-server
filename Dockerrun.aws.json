@@ -17,7 +17,7 @@
             "mountPoints": [
                 {
                     "sourceVolume": "awseb-logs-experigenserver",
-                    "containerPath": "/var/log/experigenserver",
+                    "containerPath": "/var/log/experigenserver"
                 }
             ],
             "portMappings": [

@@ -19,6 +19,12 @@
                     "sourceVolume": "awseb-logs-experigenserver",
                     "containerPath": "/var/log/experigenserver"
                 }
+            ],
+            "portMappings": [
+                {
+                    "hostPort": 3000,
+                    "containerPort": 3000
+                }
             ]
         },
         {

@@ -6,6 +6,12 @@
             "host": {
                 "sourcePath": "/var/app/current/proxy/conf.d"
             }
+        },
+        {
+            "name": "database",
+            "host": {
+                "sourcePath": "/var/app/database"
+            }
         }
     ],
     "containerDefinitions": [
@@ -18,12 +24,35 @@
                 {
                     "sourceVolume": "awseb-logs-experigenserver",
                     "containerPath": "/var/log/experigenserver"
+                },
+                {
+                    "sourceVolume": "database",
+                    "containerPath": "/data/db",
+                    "readOnly": false
                 }
             ],
             "portMappings": [
                 {
                     "hostPort": 3000,
                     "containerPort": 3000
+                }
+            ]
+        },
+        {
+            "name": "mongodb",
+            "image": "mongo",
+            "memory": 1024,
+            "essential": true,
+            "mountPoints": [
+                {
+                    "sourceVolume": "awseb-logs-mongodb",
+                    "containerPath": "/var/log/mongodb"
+                }
+            ],
+            "portMappings": [
+                {
+                    "hostPort": 27017,
+                    "containerPort": 27017
                 }
             ]
         },

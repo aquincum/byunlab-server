@@ -24,11 +24,6 @@
                 {
                     "sourceVolume": "awseb-logs-experigenserver",
                     "containerPath": "/var/log/experigenserver"
-                },
-                {
-                    "sourceVolume": "database",
-                    "containerPath": "/data/db",
-                    "readOnly": false
                 }
             ],
             "portMappings": [
@@ -47,6 +42,11 @@
                 {
                     "sourceVolume": "awseb-logs-mongodb",
                     "containerPath": "/var/log/mongodb"
+                },
+                {
+                    "sourceVolume": "database",
+                    "containerPath": "/data/db",
+                    "readOnly": false
                 }
             ],
             "portMappings": [

@@ -37,6 +37,27 @@
             ]
         },
         {
+            "name": "startserver",
+            "image": "aquincum/startserver",
+            "memory": 128,
+            "essential": true,
+            "links": [
+                "mongodb"
+            ],
+            "mountPoints": [
+                {
+                    "sourceVolume": "awseb-logs-startserver",
+                    "containerPath": "/var/log/startserver"
+                }
+            ],
+            "portMappings": [
+                {
+                    "hostPort": 3001,
+                    "containerPort": 3001
+                }
+            ]
+        },
+        {
             "name": "mongodb",
             "image": "mongo",
             "memory": 128,
@@ -65,7 +86,8 @@
             "memory": 128,
             "essential": true,
             "links": [
-                "experigenserver"
+                "experigenserver",
+                "startserver"
             ],
             "mountPoints": [
                 {

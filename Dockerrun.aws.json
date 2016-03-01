@@ -20,6 +20,9 @@
             "image": "aquincum/experigenserver2",
             "memory": 128,
             "essential": true,
+            "links": [
+                "mongodb"
+            ],
             "mountPoints": [
                 {
                     "sourceVolume": "awseb-logs-experigenserver",
